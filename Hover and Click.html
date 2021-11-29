@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js">
+    </script>
+    <style>
+        .header {
+
+            width: fit-content;
+            padding: 5px;
+            font-weight: bold;
+            font-size: larger;
+            cursor: pointer;
+        }
+
+        .showhim {
+            display: flex;
+            width: max-content;
+            flex-direction: column;
+            margin: auto;
+            padding: 10px;
+            align-items: center;
+            margin-top: 5%;
+            background: rgb(243, 241, 241);
+            transition: height 0.1s;
+            border: 1px solid black;
+            border-radius: 3px;
+            box-shadow: 5px 5px 5px 5px #b8b7b7;
+        }
+
+        .showme {
+            display: none;
+
+        }
+
+        .showhim:hover .showme {
+            height: 10px;
+            padding: 10px;
+            display: block;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="showhim">
+        <div id="visible" class="header">HOVER ME THEN CLICK</div>
+        <div id="invisible" class="showme"> "Hello Dear!</br> Hi, I am a starter MERN Stack Developer.</br> I like to
+            create new things.</br> I love to take chalenges. </br>Wish me luck!"</br>
+            <small style="font-size: 10px; color:red;">Click Top to Hide Text</small>
+        </div>
+        <div id="demo"></div>
+    </div>
+</body>
+<script>
+    $(function () {
+        $("#visible").click(function () {
+            $('#invisible').toggleClass("show");
+        });
+    });
+</script>
+<style>
+    .hide {
+        display: none;
+    }
+
+    .show {
+        display: block;
+        text-align: center;
+        height: fit-content !important;
+    }
+</style>
+
+</html>
